@@ -1,0 +1,180 @@
+---
+const navLinks = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#producto", label: "Producto" },
+  { href: "#caracteristicas", label: "Características" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "#testimonios", label: "Testimonios" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header
+  data-navbar
+  data-hidden="false"
+  class="fixed inset-x-0 top-0 z-50 px-4 py-3 transition-transform duration-300 ease-out data-[hidden=true]:-translate-y-full sm:px-6 lg:px-8"
+>
+  <nav
+    class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/35 bg-surface/75 px-4 py-3 text-text shadow-lg shadow-secondary/5 backdrop-blur-xl supports-[backdrop-filter]:bg-surface/60"
+    aria-label="Navegacion principal"
+  >
+    <a
+      href="#inicio"
+      class="inline-flex items-center rounded-full text-lg font-bold tracking-normal text-secondary transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+    >
+      PGLOW
+    </a>
+
+    <div class="hidden items-center gap-1 md:flex">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-full px-3 py-2 text-sm font-medium text-text/75 transition hover:bg-primary/10 hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <a
+      href="/shop"
+      class="hidden rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-secondary/20 transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
+    >
+      Comprar ahora
+    </a>
+
+    <button
+      type="button"
+      data-menu-toggle
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-secondary/10 text-secondary transition hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menu"
+    >
+      <svg
+        data-menu-icon-open
+        class="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M4 7h16M4 12h16M4 17h16"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+      <svg
+        data-menu-icon-close
+        class="hidden h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M6 6l12 12M18 6L6 18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    data-mobile-menu
+    data-open="false"
+    class="pointer-events-none absolute inset-x-4 top-[calc(100%+0.5rem)] origin-top scale-95 rounded-2xl border border-white/40 bg-surface/95 p-3 opacity-0 shadow-xl shadow-secondary/10 backdrop-blur-xl transition duration-200 ease-out data-[open=true]:pointer-events-auto data-[open=true]:scale-100 data-[open=true]:opacity-100 md:hidden"
+    aria-hidden="true"
+    inert
+  >
+    <div class="flex flex-col gap-1">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-xl px-4 py-3 text-sm font-medium text-text/80 transition hover:bg-primary/10 hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="/shop"
+        class="mt-2 rounded-xl bg-secondary px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
+        Comprar ahora
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  (() => {
+    const navbar = document.querySelector("[data-navbar]");
+    const menu = document.querySelector("[data-mobile-menu]");
+    const toggle = document.querySelector("[data-menu-toggle]");
+    const openIcon = document.querySelector("[data-menu-icon-open]");
+    const closeIcon = document.querySelector("[data-menu-icon-close]");
+
+    if (
+      !(navbar instanceof HTMLElement) ||
+      !(menu instanceof HTMLElement) ||
+      !(toggle instanceof HTMLButtonElement)
+    ) {
+      return;
+    }
+
+    let isMenuOpen = false;
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const setMenuOpen = (open:any) => {
+      isMenuOpen = open;
+      menu.dataset.open = String(open);
+      menu.setAttribute("aria-hidden", String(!open));
+      menu.toggleAttribute("inert", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Cerrar menu" : "Abrir menu");
+      openIcon?.classList.toggle("hidden", open);
+      closeIcon?.classList.toggle("hidden", !open);
+
+      if (open) {
+        navbar.dataset.hidden = "false";
+      }
+    };
+
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
+      const isAtTop = currentScrollY <= 8;
+      const isScrollingDown = currentScrollY > lastScrollY;
+
+      navbar.dataset.hidden = String(!isAtTop && isScrollingDown && !isMenuOpen);
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    toggle.addEventListener("click", () => {
+      setMenuOpen(!isMenuOpen);
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setMenuOpen(false);
+      });
+    });
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNavbar);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  })();
+</script>
