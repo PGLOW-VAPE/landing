@@ -22,7 +22,14 @@ const navLinks = [
       href="#inicio"
       class="inline-flex items-center rounded-full text-lg font-bold tracking-normal text-secondary transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
     >
-      PGLOW
+      <div class="flex items-center gap-1">
+        <span
+          aria-hidden="true"
+          class="h-6 w-6 bg-primary [mask:url('/favicon.svg')_center/contain_no-repeat] [-webkit-mask:url('/favicon.svg')_center/contain_no-repeat]"
+        ></span>
+
+        <h2>PGLOW</h2>
+      </div>
     </a>
 
     <div class="hidden items-center gap-1 md:flex">
@@ -39,7 +46,8 @@ const navLinks = [
     </div>
 
     <a
-      href="/shop"
+      target="_blank"
+      href="https://pglow.papedir.com"
       class="hidden rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-secondary/20 transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
     >
       Comprar ahora
@@ -102,7 +110,8 @@ const navLinks = [
         ))
       }
       <a
-        href="/shop"
+        target="_blank"
+        href="https://pglow.papedir.com"
         class="mt-2 rounded-xl bg-secondary px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       >
         Comprar ahora
@@ -131,7 +140,7 @@ const navLinks = [
     let lastScrollY = window.scrollY;
     let ticking = false;
 
-    const setMenuOpen = (open:any) => {
+    const setMenuOpen = (open: any) => {
       isMenuOpen = open;
       menu.dataset.open = String(open);
       menu.setAttribute("aria-hidden", String(!open));
@@ -151,7 +160,9 @@ const navLinks = [
       const isAtTop = currentScrollY <= 8;
       const isScrollingDown = currentScrollY > lastScrollY;
 
-      navbar.dataset.hidden = String(!isAtTop && isScrollingDown && !isMenuOpen);
+      navbar.dataset.hidden = String(
+        !isAtTop && isScrollingDown && !isMenuOpen,
+      );
       lastScrollY = currentScrollY;
       ticking = false;
     };
@@ -174,7 +185,7 @@ const navLinks = [
           ticking = true;
         }
       },
-      { passive: true }
+      { passive: true },
     );
   })();
 </script>

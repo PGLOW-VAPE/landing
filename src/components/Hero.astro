@@ -1,0 +1,93 @@
+---
+const heroImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
+---
+
+<section
+  id="inicio"
+  aria-labelledby="hero-heading"
+  class="relative isolate flex min-h-svh overflow-hidden bg-secondary px-6 pb-20 pt-32 text-white sm:px-8 lg:min-h-screen lg:items-center lg:px-10 lg:pb-24 lg:pt-28"
+>
+  <div
+    class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat scale-[1.03] lg:bg-[center_right_18%]"
+    style={`background-image: url('${heroImage}');`}
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-b from-black/85 via-black/70 to-black/85 lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.66)_45%,rgba(0,0,0,0.28)_100%)]"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_38%,rgba(28,77,141,0.26),transparent_42%)] lg:bg-[radial-gradient(circle_at_78%_42%,rgba(28,77,141,0.34),transparent_38%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="mx-auto flex w-full max-w-6xl justify-center lg:justify-start">
+    <div
+      class="hero-content flex max-w-3xl flex-col items-center text-center lg:ml-8 lg:items-start lg:text-left xl:ml-16"
+    >
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-sm"
+      >
+        PGLOW · Neiva, Colombia
+      </p>
+
+      <h1
+        id="hero-heading"
+        class="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-normal text-white text-balance sm:text-5xl md:text-6xl"
+      >
+        Tecnología local para una experiencia limpia con vaporizador portátil
+      </h1>
+
+      <p
+        class="mt-6 max-w-2xl text-base leading-7 text-white/82 sm:text-lg md:text-xl md:leading-8"
+      >
+        PGLOW nace en Colombia con diseño preciso, uso sencillo y una forma más
+        limpia de llevar tu ritual a cualquier lugar.
+      </p>
+
+      <div
+        class="mt-9 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center lg:justify-start"
+      >
+        <a
+          href="/shop"
+          class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-secondary shadow-xl shadow-black/25 transition hover:bg-primary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Comprar ahora
+        </a>
+        <a
+          href="#producto"
+          class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/45 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Conocer más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-content {
+    animation: hero-content-in 700ms ease-out both;
+  }
+
+  @keyframes hero-content-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-content {
+      animation: none;
+    }
+  }
+</style>

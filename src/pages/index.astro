@@ -1,13 +1,9 @@
 ---
+import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 
 const sections = [
-	{
-		id: "inicio",
-		title: "Inicio",
-		copy: "Placeholder para la primera vista de PGLOW.",
-	},
 	{
 		id: "producto",
 		title: "Producto",
@@ -52,6 +48,7 @@ const sections = [
 	<body>
 		<Navbar />
 		<main>
+			<Hero />
 			{
 				sections.map((section, index) => (
 					<section
@@ -65,17 +62,9 @@ const sections = [
 							<p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
 								PGLOW
 							</p>
-							{
-								index === 0 ? (
-									<h1 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
-										{section.title}
-									</h1>
-								) : (
-									<h2 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
-										{section.title}
-									</h2>
-								)
-							}
+							<h2 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
+								{section.title}
+							</h2>
 							<p class="mt-5 max-w-2xl text-base leading-7 text-text/70 sm:text-lg">
 								{section.copy}
 							</p>
