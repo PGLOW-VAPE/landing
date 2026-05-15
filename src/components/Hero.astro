@@ -1,11 +1,12 @@
 ---
-const heroImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
+const vapeImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
+const heroImage = "/assets/hero-bg.jpg";
 ---
 
 <section
   id="inicio"
   aria-labelledby="hero-heading"
-  class="relative isolate flex min-h-svh overflow-hidden bg-secondary px-6 pb-20 pt-32 text-white sm:px-8 lg:min-h-screen lg:items-center lg:px-10 lg:pb-24 lg:pt-28"
+  class="relative isolate flex min-h-svh overflow-hidden bg-secondary px-6 pb-20 pt-28 text-white sm:px-8 lg:min-h-screen lg:items-center lg:px-10 lg:pb-24 lg:pt-28"
 >
   <div
     class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat scale-[1.03] lg:bg-[center_right_18%]"
@@ -38,15 +39,22 @@ const heroImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
         id="hero-heading"
         class="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-normal text-white text-balance sm:text-5xl md:text-6xl"
       >
-        Tecnología Local para una Experiencia más Limpia y Eficiente con
-        Vaporizador Herbal.
+        Una Experiencia Herbal Más limpia
       </h1>
 
+      <img
+        src={vapeImage}
+        alt="Imagen del vaporizador PGLOW"
+        class="mt-8 w-full h-60 md:h-120 object-cover rounded-2xl object-center shadow-lg shadow-secondary/20 sm:mt-12 lg:mt-16"
+      />
+
       <p
-        class="mt-6 max-w-2xl text-base leading-7 text-white/82 sm:text-lg md:text-xl md:leading-8"
+        class="mt-6 max-w-2xl text-xl leading-7 text-white/82 sm:text-lg md:text-xl md:leading-8"
       >
-        PGLOW diseñado en Colombia, una forma más limpia de llevar tu ritual a
-        cualquier lugar.
+        <!-- Experience premium dry herb vaporization with precise temperature
+        control, powerful battery life, and clean convection heating. -->
+        Saca el máximo provecho a tus hierbas con calentamiento controlado, batería
+        de larga duración y diseño compacto.
       </p>
 
       <div
@@ -64,31 +72,40 @@ const heroImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
         >
           Conocer más
         </a>
+
+        <ul
+          class="mt-6 flex items-center justify-evenly gap-4 text-sm font-medium text-white/90 sm:mt-8 sm:flex-row sm:items-center sm:gap-6 lg:mt-0"
+        >
+          <li>160–220°C</li>
+          <li>3000mA</li>
+          <li class="">USB-C</li>
+          <li class="">OLED Display</li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
 
-<style>
-  .hero-content {
-    animation: hero-content-in 700ms ease-out both;
-  }
-
-  @keyframes hero-content-in {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
+  <style>
     .hero-content {
-      animation: none;
+      animation: hero-content-in 700ms ease-out both;
     }
-  }
-</style>
+
+    @keyframes hero-content-in {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content {
+        animation: none;
+      }
+    }
+  </style>
+</section>
