@@ -4,74 +4,74 @@ import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
 
 const sections = [
-	{
-		id: "producto",
-		title: "Producto",
-		copy: "Placeholder para presentar el vaporizador de hierbas secas.",
-	},
-	{
-		id: "caracteristicas",
-		title: "Características",
-		copy: "Placeholder para las caracteristicas principales del producto.",
-	},
-	{
-		id: "beneficios",
-		title: "Beneficios",
-		copy: "Placeholder para comunicar los beneficios clave.",
-	},
-	{
-		id: "testimonios",
-		title: "Testimonios",
-		copy: "Placeholder para comentarios de clientes.",
-	},
-	{
-		id: "contacto",
-		title: "Contacto",
-		copy: "Placeholder para informacion de contacto y llamada a la accion.",
-	},
+  {
+    id: "producto",
+    title: "Producto",
+    copy: "Placeholder para presentar el vaporizador de hierbas secas.",
+  },
+  {
+    id: "caracteristicas",
+    title: "Características",
+    copy: "Placeholder para las caracteristicas principales del producto.",
+  },
+  {
+    id: "beneficios",
+    title: "Beneficios",
+    copy: "Placeholder para comunicar los beneficios clave.",
+  },
+  {
+    id: "tutorial",
+    title: "Tutorial",
+    copy: "Placeholder para Tutorial.",
+  },
+  {
+    id: "contacto",
+    title: "Contacto",
+    copy: "Placeholder para informacion de contacto y llamada a la accion.",
+  },
 ];
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<meta
-			name="description"
-			content="Landing page de PGLOW, vaporizador de hierbas secas hecho en Neiva, Colombia."
-		/>
-		<title>PGLOW | Vaporizador de hierbas secas</title>
-	</head>
-	<body>
-		<Navbar />
-		<main>
-			<Hero />
-			{
-				sections.map((section, index) => (
-					<section
-						id={section.id}
-						class:list={[
-							"flex min-h-svh items-center px-6 py-24",
-							index % 2 === 0 ? "bg-surface" : "bg-slate-50",
-						]}
-					>
-						<div class="mx-auto w-full max-w-6xl">
-							<p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-								PGLOW
-							</p>
-							<h2 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
-								{section.title}
-							</h2>
-							<p class="mt-5 max-w-2xl text-base leading-7 text-text/70 sm:text-lg">
-								{section.copy}
-							</p>
-						</div>
-					</section>
-				))
-			}
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Landing page de PGLOW, vaporizador de hierbas secas hecho en Neiva, Colombia."
+    />
+    <title>PGLOW | Vaporizador de hierbas secas</title>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <Hero />
+      {
+        sections.map((section, index) => (
+          <section
+            id={section.id}
+            class:list={[
+              "flex min-h-svh items-center px-6 py-24",
+              index % 2 === 0 ? "bg-surface" : "bg-slate-50",
+            ]}
+          >
+            <div class="mx-auto w-full max-w-6xl">
+              <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                PGLOW
+              </p>
+              <h2 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
+                {section.title}
+              </h2>
+              <p class="mt-5 max-w-2xl text-base leading-7 text-text/70 sm:text-lg">
+                {section.copy}
+              </p>
+            </div>
+          </section>
+        ))
+      }
+    </main>
+  </body>
 </html>
