@@ -1,6 +1,6 @@
 ---
 const vapeImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
-const heroImage = "/assets/hero-bg.jpg";
+// const heroImage = "https://i.ibb.co/1sZzL7Z/IMG-8066.jpg";
 ---
 
 <section
@@ -8,14 +8,14 @@ const heroImage = "/assets/hero-bg.jpg";
   aria-labelledby="hero-heading"
   class="relative isolate flex h-[100dvh] max-h-[100dvh] flex-col overflow-hidden bg-secondary px-0 pb-[clamp(1.25rem,5dvh,3.5rem)] pt-[clamp(5.75rem,13dvh,7.25rem)] text-white sm:px-8 lg:h-screen lg:max-h-screen lg:justify-center lg:px-10 lg:pb-24 lg:pt-28"
 >
-  <div
+  <!-- <div
     class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat scale-[1.03] lg:bg-[center_right_18%]"
     style={`background-image: url('${heroImage}');`}
     aria-hidden="true"
   >
-  </div>
+  </div> -->
   <div
-    class="absolute inset-0 -z-10 bg-linear-to-b from-black/85 via-black/70 to-black/85 lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.66)_45%,rgba(0,0,0,0.28)_100%)]"
+    class="absolute inset-0 -z-10 bg-linear-to-b from-secondary via-primary/50 to-secondary lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.66)_45%,rgba(0,0,0,0.28)_100%)]"
     aria-hidden="true"
   >
   </div>
@@ -47,7 +47,7 @@ const heroImage = "/assets/hero-bg.jpg";
       </div>
 
       <div
-        class="min-h-0 w-full flex-1 overflow-hidden px-5 shadow-lg shadow-secondary/20 lg:h-[clamp(18rem,42vh,30rem)] lg:flex-none"
+        class="min-h-0 w-full flex-1 overflow-hidden px-5 lg:h-[clamp(18rem,42vh,30rem)] lg:flex-none"
       >
         <img
           src={vapeImage}
