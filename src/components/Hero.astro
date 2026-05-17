@@ -1,4 +1,6 @@
 ---
+import GradientBackground from "./GradientBackground.astro";
+
 const vapeImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
 // const heroImage = "https://i.ibb.co/1sZzL7Z/IMG-8066.jpg";
 ---
@@ -14,16 +16,7 @@ const vapeImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
     aria-hidden="true"
   >
   </div> -->
-  <div
-    class="absolute inset-0 -z-10 bg-linear-to-b from-secondary via-primary/50 to-secondary lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.66)_45%,rgba(0,0,0,0.28)_100%)]"
-    aria-hidden="true"
-  >
-  </div>
-  <div
-    class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_38%,rgba(28,77,141,0.26),transparent_42%)] lg:bg-[radial-gradient(circle_at_78%_42%,rgba(28,77,141,0.34),transparent_38%)]"
-    aria-hidden="true"
-  >
-  </div>
+  <GradientBackground variant="hero" />
 
   <div
     class="mx-auto flex min-h-0 w-full max-w-6xl flex-1 items-stretch justify-center lg:flex-none lg:items-center lg:justify-start"
@@ -76,7 +69,7 @@ const vapeImage = "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg";
             Comprar ahora
           </a>
           <a
-            href="#producto"
+            href="#product"
             class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/45 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/18 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:py-3"
           >
             Conocer más

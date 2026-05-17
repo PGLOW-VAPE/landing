@@ -1,0 +1,300 @@
+---
+import GradientBackground from "./GradientBackground.astro";
+
+type ShowcaseSlide = {
+  type: "image" | "video";
+  src: string;
+  title: string;
+  caption: string;
+  alt?: string;
+  poster?: string;
+};
+
+// Place final showcase assets in public/media/product/.
+// Files in public are served from the site root:
+// public/media/product/usage-flow.mp4 -> /media/product/usage-flow.mp4
+const slides: ShowcaseSlide[] = [
+  {
+    type: "video",
+    src: "/media/product/usage-flow.mp4",
+    poster: "/media/product/usage-flow-poster.jpg",
+    title: "Usage flow",
+    caption: "Load, set, and enjoy.",
+  },
+  {
+    type: "image",
+    src: "/media/product/product-close-up.jpg",
+    title: "Product close-up",
+    caption: "Compact metal finish.",
+    alt: "Close-up placeholder of the PGLOW vaporizer.",
+  },
+  {
+    type: "image",
+    src: "/media/product/oled-display.jpg",
+    title: "OLED display",
+    caption: "Temperature at a glance.",
+    alt: "OLED display placeholder on the PGLOW vaporizer.",
+  },
+  {
+    type: "image",
+    src: "/media/product/usb-c-charging.jpg",
+    title: "USB-C charging",
+    caption: "Ready for daily use.",
+    alt: "USB-C charging placeholder for the PGLOW vaporizer.",
+  },
+  {
+    type: "image",
+    src: "/media/product/replaceable-battery.jpg",
+    title: "Replaceable battery",
+    caption: "Power that keeps moving.",
+    alt: "Replaceable battery placeholder for the PGLOW vaporizer.",
+  },
+  {
+    type: "image",
+    src: "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg",
+    title: "Portable lifestyle",
+    caption: "Made to go with you.",
+    alt: "Lifestyle placeholder with the PGLOW vaporizer.",
+  },
+];
+---
+
+<section
+  id="product"
+  aria-labelledby="product-showcase-heading"
+  class="relative isolate overflow-hidden bg-secondary px-6 py-8 text-white sm:py-28 lg:px-10"
+>
+  <GradientBackground />
+
+  <div class="mx-auto w-full max-w-6xl">
+    <div class="max-w-3xl">
+      <!-- <p
+        class="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm"
+      >
+        PGLOW Product
+      </p> -->
+      <h2
+        id="product-showcase-heading"
+        class="mt-0 text-4xl font-bold tracking-normal text-primary text-balance sm:text-5xl"
+      >
+        Meet the Vaporizer
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">
+        Designed for smooth sessions, pure flavor, and precise control.
+      </p>
+    </div>
+
+    <div
+      data-product-showcase
+      tabindex="0"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Product media carousel"
+      class="mt-10 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-secondary sm:mt-12"
+    >
+      <div
+        class="relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04] shadow-[0_26px_90px_rgba(0,0,0,0.46),0_0_48px_rgba(111,209,215,0.12)]"
+      >
+        <div
+          data-carousel-track
+          class="flex aspect-[4/5] transition-transform duration-500 ease-out motion-reduce:transition-none sm:aspect-[16/10] lg:aspect-[16/9]"
+        >
+          {
+            slides.map((slide, index) => (
+              <figure
+                data-carousel-slide
+                class="grid min-w-full grid-rows-[1fr_auto]"
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${index + 1} of ${slides.length}: ${slide.title}`}
+                aria-hidden={index === 0 ? "false" : "true"}
+                inert={index === 0 ? undefined : true}
+              >
+                <div class="relative min-h-0 overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.025))]">
+                  {slide.type === "video" ? (
+                    <video
+                      src={slide.src}
+                      poster={slide.poster}
+                      class="h-full w-full object-cover"
+                      muted
+                      playsinline
+                      controls
+                      preload="metadata"
+                      aria-label="Video placeholder showing loading herb, selecting temperature, and vaping with the PGLOW vaporizer"
+                    >
+                      Your browser does not support the video element.
+                    </video>
+                  ) : (
+                    <img
+                      src={slide.src}
+                      alt={slide.alt}
+                      loading={index === 1 ? "eager" : "lazy"}
+                      class="h-full w-full object-cover"
+                    />
+                  )}
+                  <div
+                    aria-hidden="true"
+                    class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(0,0,0,0.48)_100%)]"
+                  />
+                </div>
+
+                <figcaption class="flex min-h-20 flex-col justify-center gap-1 border-t border-white/10 bg-black/45 px-5 py-4 backdrop-blur sm:min-h-16 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6">
+                  <h3 class="text-base font-semibold tracking-normal text-white">
+                    {slide.title}
+                  </h3>
+                  <p class="text-sm leading-6 text-white/68">{slide.caption}</p>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+
+        <button
+          type="button"
+          data-carousel-prev
+          class="absolute left-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white shadow-lg shadow-black/20 backdrop-blur transition hover:border-primary/70 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:left-5"
+          aria-label="Show previous product media"
+        >
+          <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          data-carousel-next
+          class="absolute right-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white shadow-lg shadow-black/20 backdrop-blur transition hover:border-primary/70 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:right-5"
+          aria-label="Show next product media"
+        >
+          <svg
+            class="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="mt-5 flex items-center justify-center gap-2"
+        aria-label="Choose product media slide"
+      >
+        {
+          slides.map((slide, index) => (
+            <button
+              type="button"
+              data-carousel-dot
+              data-active={index === 0 ? "true" : "false"}
+              class="h-2.5 w-2.5 rounded-full border border-white/30 bg-white/35 transition-all duration-300 hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary data-[active=true]:w-8 data-[active=true]:border-primary data-[active=true]:bg-primary motion-reduce:transition-none"
+              aria-label={`Show slide ${index + 1}: ${slide.title}`}
+              aria-current={index === 0 ? "true" : "false"}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll("[data-product-showcase]").forEach((carousel) => {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(
+      carousel.querySelectorAll("[data-carousel-slide]"),
+    );
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+    const dots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+
+    if (!(track instanceof HTMLElement) || slides.length === 0) {
+      return;
+    }
+
+    let currentIndex = 0;
+
+    const setSlide = (nextIndex: number) => {
+      currentIndex = (nextIndex + slides.length) % slides.length;
+      track.style.transform = `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+      slides.forEach((slide, index) => {
+        const isActive = index === currentIndex;
+        slide.setAttribute("aria-hidden", String(!isActive));
+        slide.toggleAttribute("inert", !isActive);
+
+        if (!isActive) {
+          slide.querySelectorAll("video").forEach((video) => {
+            video.pause();
+          });
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        if (dot instanceof HTMLElement) {
+          dot.dataset.active = String(index === currentIndex);
+          dot.setAttribute("aria-current", String(index === currentIndex));
+        }
+      });
+    };
+
+    if (prevButton instanceof HTMLButtonElement) {
+      prevButton.addEventListener("click", () => setSlide(currentIndex - 1));
+    }
+
+    if (nextButton instanceof HTMLButtonElement) {
+      nextButton.addEventListener("click", () => setSlide(currentIndex + 1));
+    }
+
+    dots.forEach((dot, index) => {
+      if (dot instanceof HTMLButtonElement) {
+        dot.addEventListener("click", () => setSlide(index));
+      }
+    });
+
+    // carousel.addEventListener("keydown", (event) => {
+    //   const target = event.target;
+
+    //   if (target instanceof HTMLVideoElement) {
+    //     return;
+    //   }
+
+    //   if (event.key === "ArrowLeft") {
+    //     event.preventDefault();
+    //     setSlide(currentIndex - 1);
+    //   }
+
+    //   if (event.key === "ArrowRight") {
+    //     event.preventDefault();
+    //     setSlide(currentIndex + 1);
+    //   }
+
+    //   if (event.key === "Home") {
+    //     event.preventDefault();
+    //     setSlide(0);
+    //   }
+
+    //   if (event.key === "End") {
+    //     event.preventDefault();
+    //     setSlide(slides.length - 1);
+    //   }
+    // });
+
+    setSlide(0);
+  });
+</script>

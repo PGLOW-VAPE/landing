@@ -1,14 +1,11 @@
 ---
+import GradientBackground from "../components/GradientBackground.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
+import ProductShowcase from "../components/ProductShowcase.astro";
 import "../styles/global.css";
 
 const sections = [
-  {
-    id: "producto",
-    title: "Producto",
-    copy: "Placeholder para presentar el vaporizador de hierbas secas.",
-  },
   {
     id: "caracteristicas",
     title: "Características",
@@ -49,20 +46,19 @@ const sections = [
     <Navbar />
     <main>
       <Hero />
+      <ProductShowcase />
       {
         sections.map((section, index) => (
           <section
             id={section.id}
-            class:list={[
-              "flex min-h-svh items-center px-6 py-24",
-              index % 2 === 0 ? "bg-surface" : "bg-slate-50",
-            ]}
+            class="relative isolate overflow-hidden bg-secondary px-6 py-8 text-white sm:py-28 lg:px-10"
           >
+            <GradientBackground />
             <div class="mx-auto w-full max-w-6xl">
               <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
                 PGLOW
               </p>
-              <h2 class="max-w-3xl text-4xl font-bold tracking-normal text-secondary sm:text-5xl">
+              <h2 class="max-w-3xl text-4xl font-bold tracking-normal text-text sm:text-5xl">
                 {section.title}
               </h2>
               <p class="mt-5 max-w-2xl text-base leading-7 text-text/70 sm:text-lg">
