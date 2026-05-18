@@ -18,6 +18,9 @@ type ShowcaseSlide = {
 // Place final showcase assets in public/media/product/.
 // Files in public are served from the site root:
 // public/media/product/usage-flow.mp4 -> /media/product/usage-flow.mp4
+
+// https://i.ibb.co/ksxGLRwC/IMG-8067.jpg
+
 const slides: ShowcaseSlide[] = [
   // {
   //   type: "video",
@@ -28,22 +31,23 @@ const slides: ShowcaseSlide[] = [
   // },
   {
     type: "image",
-    src: "https://ca.planetofthevapes.com/cdn/shop/files/potv-lobo-side-tilted-view-with-dimpled-stem_840x.jpg?v=1751878750",
-    title: "Product close-up",
-    caption: "Compact metal finish.",
-    alt: "Close-up placeholder of the PGLOW vaporizer.",
+    src: "https://vapeguy.com/wp-content/uploads/2024/02/POTV-Lobo-dry-herb-vaporizer-11-1024x683.jpg",
+    title: "Tanque de cerámica",
+    caption: "Mejor sabor y fácil de limpiar.",
+    alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
   },
+
   {
     type: "image",
     src: "https://ca.planetofthevapes.com/cdn/shop/files/CopyofPOTVLoboextras-8copy_840x.jpg?v=1751878750",
-    title: "OLED display",
-    caption: "Temperature at a glance.",
+    title: "Pantalla OLED",
+    caption: "Vaporiza con precisión y estilo.",
     alt: "OLED display placeholder on the PGLOW vaporizer.",
   },
   {
     type: "image",
     src: "https://vapeguy.com/wp-content/uploads/2024/02/POTV-Lobo-dry-herb-vaporizer-11-1024x683.jpg",
-    title: "USB-C charging",
+    title: "Carga con USB-C",
     caption: "Ready for daily use.",
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
   },
@@ -56,10 +60,10 @@ const slides: ShowcaseSlide[] = [
   },
   {
     type: "image",
-    src: "https://i.ibb.co/ksxGLRwC/IMG-8067.jpg",
-    title: "Portable lifestyle",
-    caption: "Made to go with you.",
-    alt: "Lifestyle placeholder with the PGLOW vaporizer.",
+    src: "https://ca.planetofthevapes.com/cdn/shop/files/CopyofPOTVLoboextras-8copy_840x.jpg?v=1751878750",
+    title: "Diseño compacto",
+    caption: "Perfecto para sesiones discretas.",
+    alt: "Close-up placeholder of the PGLOW vaporizer.",
   },
 ];
 

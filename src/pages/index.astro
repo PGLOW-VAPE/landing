@@ -51,7 +51,7 @@ const sections = [
         sections.map((section, index) => (
           <section
             id={section.id}
-            class="relative isolate overflow-hidden bg-secondary px-6 py-8 text-white sm:py-28 lg:px-10"
+            class="relative isolate overflow-hidden bg-surface px-6 py-8 text-text sm:py-28 lg:px-10"
           >
             <GradientBackground />
             <div class="mx-auto w-full max-w-6xl">
@@ -61,7 +61,7 @@ const sections = [
               <h2 class="max-w-3xl text-4xl font-bold tracking-normal text-text sm:text-5xl">
                 {section.title}
               </h2>
-              <p class="mt-5 max-w-2xl text-base leading-7 text-text/70 sm:text-lg">
+              <p class="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">
                 {section.copy}
               </p>
             </div>

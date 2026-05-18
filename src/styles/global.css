@@ -2,9 +2,12 @@
 
 @theme {
   --color-primary: #6fd1d7;
-  --color-secondary: #000;
-  --color-surface: #000;
-  --color-text: #fff;
+  --color-secondary: #050505;
+  --color-surface: #07090a;
+  --color-surface-elevated: #101416;
+  --color-text: #f8fafc;
+  --color-muted: #a8b3b8;
+  --color-border: #1f2a2e;
 }
 
 * {
@@ -22,6 +25,7 @@ body {
   overflow-x: hidden;
   background: var(--color-surface);
   color: var(--color-text);
+  font-feature-settings: "kern";
   font-family:
     Inter,
     ui-sans-serif,
@@ -30,6 +34,8 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
