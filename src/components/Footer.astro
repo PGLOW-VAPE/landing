@@ -1,162 +1,79 @@
 ---
-const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#product", label: "Producto" },
-  { href: "#caracteristicas", label: "Características" },
-  { href: "#beneficios", label: "Beneficios" },
-  { href: "#tutorial", label: "Tutorial" },
-  { href: "#contacto", label: "Contacto" },
-];
+const whatsappHref = "https://wa.me/XXXXXXXXXXX";
+const buyHref = "https://pglow.papedir.com";
 ---
 
-<header
+<aside
   data-footer
   data-hidden="false"
   class="fixed inset-x-0 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 px-4 py-3 transition duration-300 ease-out data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
+  aria-label="Acciones rápidas"
 >
-  <nav
-    class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-secondary/[0.88] px-4 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72]"
-    aria-label="Navegacion inferior"
+  <div
+    class="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-full border border-white/10 bg-secondary/[0.88] px-3 py-2.5 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4"
   >
     <a
       href="#inicio"
-      class="inline-flex items-center rounded-full text-lg font-bold tracking-normal text-text transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      class="flex min-w-0 items-center gap-2 rounded-full pr-1 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      aria-label="Volver al inicio de PGLOW"
     >
-      <div class="flex items-center gap-1">
-        <span
+      <span
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary"
+      >
+        <img
+          src="/favicon.svg"
+          alt="PGLOW logo"
+          class="h-5 w-5 [filter:brightness(0)]"
+        />
+      </span>
+      <span
+        class="truncate text-sm font-semibold leading-none text-white sm:text-base"
+      >
+        Pure flavor. Precise control.
+      </span>
+    </a>
+
+    <div class="flex shrink-0 items-center gap-2">
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        aria-label="Contactar por WhatsApp"
+      >
+        <svg
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="currentColor"
           aria-hidden="true"
-          class="h-6 w-6 bg-primary [mask:url('/favicon.svg')_center/contain_no-repeat] [-webkit-mask:url('/favicon.svg')_center/contain_no-repeat]"
-        ></span>
-
-        <!-- <h2 class="text-text">PGLOW · COLOMBIA</h2> -->
-        <h2 class="text-text">PGLOW</h2>
-      </div>
-    </a>
-
-    <div class="hidden items-center gap-1 md:flex">
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="rounded-full px-3 py-2 text-sm font-medium text-white/72 transition hover:bg-white/8 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
-
-    <a
-      target="_blank"
-      href="https://pglow.papedir.com"
-      rel="noreferrer"
-      class="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-secondary shadow-sm shadow-primary/20 transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
-    >
-      Comprar ahora
-    </a>
-
-    <button
-      type="button"
-      data-footer-menu-toggle
-      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-text transition hover:bg-white/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
-      aria-controls="footer-mobile-menu"
-      aria-expanded="false"
-      aria-label="Abrir menu"
-    >
-      <svg
-        data-footer-menu-icon-open
-        class="h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M4 7h16M4 12h16M4 17h16"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"></path>
-      </svg>
-      <svg
-        data-footer-menu-icon-close
-        class="hidden h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M6 6l12 12M18 6L6 18"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"></path>
-      </svg>
-    </button>
-  </nav>
-
-  <div
-    id="footer-mobile-menu"
-    data-footer-mobile-menu
-    data-open="false"
-    class="pointer-events-none absolute inset-x-4 bottom-[calc(100%+0.5rem)] origin-bottom scale-95 rounded-2xl border border-white/10 bg-surface/95 p-3 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-200 ease-out data-[open=true]:pointer-events-auto data-[open=true]:scale-100 data-[open=true]:opacity-100 md:hidden"
-    aria-hidden="true"
-    inert
-  >
-    <div class="flex flex-col gap-1">
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="rounded-xl px-4 py-3 text-sm font-medium text-white/78 transition hover:bg-primary/12 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            {link.label}
-          </a>
-        ))
-      }
+        >
+          <path
+            d="M12.04 2a9.82 9.82 0 0 0-8.42 14.86L2.5 22l5.26-1.08A9.82 9.82 0 1 0 12.04 2Zm0 1.76a8.06 8.06 0 0 1 6.86 12.3 8.02 8.02 0 0 1-9.58 3.08l-.3-.13-3.83.79.81-3.72-.17-.31a8.06 8.06 0 0 1 6.21-12.01Zm-3.4 4.2c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.6c.13.17 1.76 2.8 4.34 3.82 2.15.85 2.59.68 3.06.64.47-.04 1.51-.62 1.72-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.13-.57.13-.17.25-.66.82-.81.99-.15.17-.3.19-.55.06-.25-.13-1.07-.39-2.04-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.38-.78-1.89-.2-.49-.41-.42-.57-.43h-.5Z"
+          ></path>
+        </svg>
+      </a>
       <a
         target="_blank"
-        href="https://pglow.papedir.com"
+        href={buyHref}
         rel="noreferrer"
-        class="mt-2 rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-secondary transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        class="inline-flex min-h-10 items-center justify-center rounded-full bg-primary px-5 text-sm font-semibold text-secondary shadow-lg shadow-primary/15 transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       >
-        Comprar ahora
+        Comprar
       </a>
     </div>
   </div>
-</header>
+</aside>
 
 <script>
   (() => {
     const footer = document.querySelector("[data-footer]");
-    const menu = document.querySelector("[data-footer-mobile-menu]");
-    const toggle = document.querySelector("[data-footer-menu-toggle]");
-    const openIcon = document.querySelector("[data-footer-menu-icon-open]");
-    const closeIcon = document.querySelector("[data-footer-menu-icon-close]");
 
-    if (
-      !(footer instanceof HTMLElement) ||
-      !(menu instanceof HTMLElement) ||
-      !(toggle instanceof HTMLButtonElement)
-    ) {
+    if (!(footer instanceof HTMLElement)) {
       return;
     }
 
-    let isMenuOpen = false;
     let lastScrollY = window.scrollY;
     let ticking = false;
-
-    const setMenuOpen = (open: boolean) => {
-      isMenuOpen = open;
-      menu.dataset.open = String(open);
-      menu.setAttribute("aria-hidden", String(!open));
-      menu.toggleAttribute("inert", !open);
-      toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Cerrar menu" : "Abrir menu");
-      openIcon?.classList.toggle("hidden", open);
-      closeIcon?.classList.toggle("hidden", !open);
-
-      if (open) {
-        footer.dataset.hidden = "false";
-      }
-    };
 
     const updateFooter = () => {
       const currentScrollY = window.scrollY;
@@ -168,22 +85,12 @@ const navLinks = [
       if (isAtTop) {
         footer.dataset.hidden = "true";
       } else if (hasScrolledMeaningfully) {
-        footer.dataset.hidden = String(isScrollingDown && !isMenuOpen);
+        footer.dataset.hidden = String(isScrollingDown);
       }
 
       lastScrollY = currentScrollY;
       ticking = false;
     };
-
-    toggle.addEventListener("click", () => {
-      setMenuOpen(!isMenuOpen);
-    });
-
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        setMenuOpen(false);
-      });
-    });
 
     window.addEventListener(
       "scroll",
