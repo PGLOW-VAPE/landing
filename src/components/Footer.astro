@@ -10,13 +10,13 @@ const navLinks = [
 ---
 
 <header
-  data-navbar
+  data-footer
   data-hidden="false"
-  class="fixed inset-x-0 bottom-0 z-50 px-4 py-3 transition-transform duration-300 ease-out data-[hidden=true]:-translate-y-full sm:px-6 lg:px-8"
+  class="fixed inset-x-0 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 px-4 py-3 transition duration-300 ease-out data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
 >
   <nav
-    class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 px-4 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-backdrop-filter:bg-surface/80"
-    aria-label="Navegacion principal"
+    class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-secondary/[0.88] px-4 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72]"
+    aria-label="Navegacion inferior"
   >
     <a
       href="#inicio"
@@ -57,14 +57,14 @@ const navLinks = [
 
     <button
       type="button"
-      data-menu-toggle
+      data-footer-menu-toggle
       class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-text transition hover:bg-white/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hidden"
-      aria-controls="mobile-menu"
+      aria-controls="footer-mobile-menu"
       aria-expanded="false"
       aria-label="Abrir menu"
     >
       <svg
-        data-menu-icon-open
+        data-footer-menu-icon-open
         class="h-5 w-5"
         viewBox="0 0 24 24"
         fill="none"
@@ -77,7 +77,7 @@ const navLinks = [
           stroke-linecap="round"></path>
       </svg>
       <svg
-        data-menu-icon-close
+        data-footer-menu-icon-close
         class="hidden h-5 w-5"
         viewBox="0 0 24 24"
         fill="none"
@@ -93,10 +93,10 @@ const navLinks = [
   </nav>
 
   <div
-    id="mobile-menu"
-    data-mobile-menu
+    id="footer-mobile-menu"
+    data-footer-mobile-menu
     data-open="false"
-    class="pointer-events-none absolute inset-x-4 top-[calc(100%+0.5rem)] origin-top scale-95 rounded-2xl border border-white/10 bg-surface/95 p-3 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-200 ease-out data-[open=true]:pointer-events-auto data-[open=true]:scale-100 data-[open=true]:opacity-100 md:hidden"
+    class="pointer-events-none absolute inset-x-4 bottom-[calc(100%+0.5rem)] origin-bottom scale-95 rounded-2xl border border-white/10 bg-surface/95 p-3 opacity-0 shadow-2xl shadow-black/40 backdrop-blur-xl transition duration-200 ease-out data-[open=true]:pointer-events-auto data-[open=true]:scale-100 data-[open=true]:opacity-100 md:hidden"
     aria-hidden="true"
     inert
   >
@@ -125,14 +125,14 @@ const navLinks = [
 
 <script>
   (() => {
-    const navbar = document.querySelector("[data-navbar]");
-    const menu = document.querySelector("[data-mobile-menu]");
-    const toggle = document.querySelector("[data-menu-toggle]");
-    const openIcon = document.querySelector("[data-menu-icon-open]");
-    const closeIcon = document.querySelector("[data-menu-icon-close]");
+    const footer = document.querySelector("[data-footer]");
+    const menu = document.querySelector("[data-footer-mobile-menu]");
+    const toggle = document.querySelector("[data-footer-menu-toggle]");
+    const openIcon = document.querySelector("[data-footer-menu-icon-open]");
+    const closeIcon = document.querySelector("[data-footer-menu-icon-close]");
 
     if (
-      !(navbar instanceof HTMLElement) ||
+      !(footer instanceof HTMLElement) ||
       !(menu instanceof HTMLElement) ||
       !(toggle instanceof HTMLButtonElement)
     ) {
@@ -143,7 +143,7 @@ const navLinks = [
     let lastScrollY = window.scrollY;
     let ticking = false;
 
-    const setMenuOpen = (open: any) => {
+    const setMenuOpen = (open: boolean) => {
       isMenuOpen = open;
       menu.dataset.open = String(open);
       menu.setAttribute("aria-hidden", String(!open));
@@ -154,18 +154,23 @@ const navLinks = [
       closeIcon?.classList.toggle("hidden", !open);
 
       if (open) {
-        navbar.dataset.hidden = "false";
+        footer.dataset.hidden = "false";
       }
     };
 
-    const updateNavbar = () => {
+    const updateFooter = () => {
       const currentScrollY = window.scrollY;
       const isAtTop = currentScrollY <= 8;
       const isScrollingDown = currentScrollY > lastScrollY;
+      const hasScrolledMeaningfully =
+        Math.abs(currentScrollY - lastScrollY) > 2;
 
-      navbar.dataset.hidden = String(
-        !isAtTop && isScrollingDown && !isMenuOpen,
-      );
+      if (isAtTop) {
+        footer.dataset.hidden = "true";
+      } else if (hasScrolledMeaningfully) {
+        footer.dataset.hidden = String(isScrollingDown && !isMenuOpen);
+      }
+
       lastScrollY = currentScrollY;
       ticking = false;
     };
@@ -184,7 +189,7 @@ const navLinks = [
       "scroll",
       () => {
         if (!ticking) {
-          window.requestAnimationFrame(updateNavbar);
+          window.requestAnimationFrame(updateFooter);
           ticking = true;
         }
       },

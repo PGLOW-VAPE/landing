@@ -1,11 +1,10 @@
 ---
 import GradientBackground from "../components/GradientBackground.astro";
-import FloatingFooter from "../components/FloatingFooter.astro";
+import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import ProductShowcase from "../components/ProductShowcase.astro";
 import "../styles/global.css";
-import Footer from "../components/Footer.astro";
 
 const sections = [
   {
@@ -47,7 +46,7 @@ const sections = [
   <body>
     <Navbar />
     <Footer />
-    <main>
+    <main class="pb-28 sm:pb-32">
       <Hero />
       <ProductShowcase />
       {
@@ -72,6 +71,5 @@ const sections = [
         ))
       }
     </main>
-    <!-- <FloatingFooter /> -->
   </body>
 </html>
