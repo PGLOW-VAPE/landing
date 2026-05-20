@@ -29,27 +29,29 @@ const slides: ShowcaseSlide[] = [
   //   title: "Usage flow",
   //   caption: "Load, set, and enjoy.",
   // },
-  {
-    type: "image",
-    src: "https://vapeguy.com/wp-content/uploads/2024/02/POTV-Lobo-dry-herb-vaporizer-11-1024x683.jpg",
-    title: "Tanque de cerámica",
-    caption: "Mejor sabor y fácil de limpiar.",
-    alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
-  },
 
   {
     type: "image",
-    src: "https://ca.planetofthevapes.com/cdn/shop/files/CopyofPOTVLoboextras-8copy_840x.jpg?v=1751878750",
+    src: "https://i.ibb.co/4nVDsWQp/F4-A5-ED43-866-E-47-CD-96-CE-014382-CE4203.png",
     title: "Pantalla OLED",
     caption: "Vaporiza con precisión y estilo.",
     alt: "OLED display placeholder on the PGLOW vaporizer.",
   },
+
   {
     type: "image",
-    src: "https://vapeguy.com/wp-content/uploads/2024/02/POTV-Lobo-dry-herb-vaporizer-11-1024x683.jpg",
+    src: "https://i.ibb.co/1t0rrpq4/D7-DC7-F9-D-55-EE-4-D4-C-B098-C54-DBA6-A736-B.png",
     title: "Carga con USB-C",
     caption: "Ready for daily use.",
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
+  },
+
+  {
+    type: "image",
+    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
+    title: "Diseño compacto",
+    caption: "Perfecto para sesiones discretas.",
+    alt: "Close-up placeholder of the PGLOW vaporizer.",
   },
   {
     type: "image",
@@ -60,10 +62,10 @@ const slides: ShowcaseSlide[] = [
   },
   {
     type: "image",
-    src: "https://ca.planetofthevapes.com/cdn/shop/files/CopyofPOTVLoboextras-8copy_840x.jpg?v=1751878750",
-    title: "Diseño compacto",
-    caption: "Perfecto para sesiones discretas.",
-    alt: "Close-up placeholder of the PGLOW vaporizer.",
+    src: "https://i.ibb.co/PGmxcywX/56-AB0728-68-BC-4033-8-CA7-C59197-AD1718.png",
+    title: "Tanque de cerámica",
+    caption: "Mejor sabor y fácil de limpiar.",
+    alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
   },
 ];
 
