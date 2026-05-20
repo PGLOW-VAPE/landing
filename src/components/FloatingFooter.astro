@@ -1,0 +1,109 @@
+---
+const featureBadges = ["3000mAh", "USB-C", "OLED", "160-220°C"];
+const whatsappHref = "https://wa.me/XXXXXXXXXXX";
+const buyHref = "#purchase";
+---
+
+<aside
+  data-floating-footer
+  data-hidden="true"
+  class="fixed inset-x-0 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-40 px-3 opacity-100 transition duration-300 ease-out data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
+  aria-label="Acciones de compra"
+>
+  <div
+    class="mx-auto flex max-w-5xl items-center gap-2 rounded-2xl border border-white/10 bg-secondary/[0.88] px-3 py-2.5 text-text shadow-2xl shadow-black/35 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:rounded-full sm:px-4"
+  >
+    <a
+      href="#inicio"
+      class="flex min-w-0 flex-1 items-center gap-2 rounded-full pr-1 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:flex-none"
+      aria-label="Volver al inicio de PGLOW"
+    >
+      <span
+        aria-hidden="true"
+        class="h-7 w-7 shrink-0 bg-primary [mask:url('/favicon.svg')_center/contain_no-repeat] [-webkit-mask:url('/favicon.svg')_center/contain_no-repeat]"
+      ></span>
+      <span class="min-w-0">
+        <span
+          class="block text-sm font-bold leading-none tracking-normal text-white"
+        >
+          PGLOW
+        </span>
+        <span
+          class="mt-1 hidden text-xs font-medium leading-none text-muted sm:block"
+        >
+          Pure flavor. Precise control.
+        </span>
+      </span>
+    </a>
+
+    <div class="hidden flex-1 items-center justify-center gap-2 lg:flex">
+      {
+        featureBadges.map((badge) => (
+          <span class="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-semibold leading-none text-white/74">
+            {badge}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="flex shrink-0 items-center gap-2">
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex min-h-10 items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-3 text-sm font-semibold text-primary transition hover:bg-primary hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-4"
+        aria-label="Contactar por WhatsApp"
+      >
+        WhatsApp
+      </a>
+      <a
+        href={buyHref}
+        class="inline-flex min-h-10 items-center justify-center rounded-full bg-primary px-4 text-sm font-semibold text-secondary shadow-lg shadow-primary/15 transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-5"
+        aria-label="Ir a comprar PGLOW"
+      >
+        Comprar
+      </a>
+    </div>
+  </div>
+</aside>
+
+<script>
+  (() => {
+    const footer = document.querySelector("[data-floating-footer]");
+
+    if (!(footer instanceof HTMLElement)) {
+      return;
+    }
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateFooter = () => {
+      const currentScrollY = window.scrollY;
+      const isAtTop = currentScrollY <= 96;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      const hasScrolledMeaningfully =
+        Math.abs(currentScrollY - lastScrollY) > 2;
+
+      if (isAtTop) {
+        footer.dataset.hidden = "true";
+      } else if (hasScrolledMeaningfully) {
+        footer.dataset.hidden = String(isScrollingDown);
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateFooter);
+          ticking = true;
+        }
+      },
+      { passive: true },
+    );
+  })();
+</script>
