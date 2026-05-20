@@ -32,6 +32,14 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
+    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
+    title: "Diseño compacto",
+    caption: "Perfecto para sesiones discretas.",
+    alt: "Close-up placeholder of the PGLOW vaporizer.",
+  },
+
+  {
+    type: "image",
     src: "https://i.ibb.co/4nVDsWQp/F4-A5-ED43-866-E-47-CD-96-CE-014382-CE4203.png",
     title: "Pantalla OLED",
     caption: "Vaporiza con precisión y estilo.",
@@ -46,13 +54,6 @@ const slides: ShowcaseSlide[] = [
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
   },
 
-  {
-    type: "image",
-    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
-    title: "Diseño compacto",
-    caption: "Perfecto para sesiones discretas.",
-    alt: "Close-up placeholder of the PGLOW vaporizer.",
-  },
   {
     type: "image",
     src: "https://www.planetofthevapes.com/cdn/shop/files/battery_1_cabca34a-408f-45be-add5-1c797ab901f1_840x.jpg?v=1748449934",
