@@ -1,5 +1,6 @@
 ---
 import GradientBackground from "../components/GradientBackground.astro";
+import FeaturesSection from "../components/FeaturesSection.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
@@ -7,11 +8,6 @@ import ProductShowcase from "../components/ProductShowcase.astro";
 import "../styles/global.css";
 
 const sections = [
-  {
-    id: "caracteristicas",
-    title: "Características",
-    copy: "Placeholder para las caracteristicas principales del producto.",
-  },
   {
     id: "beneficios",
     title: "Beneficios",
@@ -49,8 +45,9 @@ const sections = [
     <main class="pb-28 sm:pb-32">
       <Hero />
       <ProductShowcase />
+      <FeaturesSection />
       {
-        sections.map((section, index) => (
+        sections.map((section) => (
           <section
             id={section.id}
             class="relative isolate overflow-hidden bg-surface px-6 py-8 text-text sm:py-28 lg:px-10"

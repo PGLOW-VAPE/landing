@@ -1,0 +1,252 @@
+---
+import GradientBackground from "./GradientBackground.astro";
+
+// Replace these mockup placeholders with final assets in public/media/features/.
+const specs = ["160-220°C", "3000mAh", "USB-C", "OLED"];
+
+const features = [
+  {
+    title: "Precision Temperature Control",
+    description:
+      "Adjustable heating from 160-220°C for full control over flavor and vapor density.",
+    readout: "220°C",
+    label: "Thermal control",
+    detail: "1°C steps",
+    mediaPath: "/media/features/temperature-control.jpg",
+    mediaAlt: "OLED screen or temperature adjustment close-up placeholder.",
+  },
+  {
+    title: "Pure Flavor Experience",
+    description:
+      "Glass vapor channels and a ceramic chamber preserve the natural flavor of your herbs.",
+    readout: "Glass",
+    label: "Clean pathway",
+    detail: "Ceramic core",
+    mediaPath: "/media/features/pure-flavor.jpg",
+    mediaAlt: "Macro product detail or vapor shot placeholder.",
+  },
+  {
+    title: "3000mAh Long Battery Life",
+    description:
+      "High-capacity battery designed for extended sessions throughout the day.",
+    readout: "3000",
+    label: "Daily power",
+    detail: "mAh cell",
+    mediaPath: "/media/features/battery-life.jpg",
+    mediaAlt: "Battery visualization or lifestyle usage shot placeholder.",
+  },
+  {
+    title: "Replaceable Battery",
+    description:
+      "Swap batteries easily and keep your sessions going without waiting to recharge.",
+    readout: "Swap",
+    label: "Replaceable",
+    detail: "Fast change",
+    mediaPath: "/media/features/replaceable-battery.jpg",
+    mediaAlt: "Battery removal demonstration placeholder.",
+  },
+  {
+    title: "USB-C Fast Charging",
+    description:
+      "Modern USB-C charging for faster and more convenient power delivery.",
+    readout: "USB-C",
+    label: "Fast charge",
+    detail: "Modern port",
+    mediaPath: "/media/features/usb-c-charging.jpg",
+    mediaAlt: "Charging close-up with cable connected placeholder.",
+  },
+  {
+    title: "OLED Smart Display",
+    description:
+      "Clear real-time information with an intuitive OLED interface.",
+    readout: "OLED",
+    label: "Live status",
+    detail: "At a glance",
+    mediaPath: "/media/features/oled-display.jpg",
+    mediaAlt: "Screen UI mockup or animated display placeholder.",
+  },
+  {
+    title: "Session & On-Demand Modes",
+    description:
+      "Customize your experience with flexible heating modes for every preference.",
+    readout: "Modes",
+    label: "Flexible heat",
+    detail: "Two styles",
+    mediaPath: "/media/features/heating-modes.jpg",
+    mediaAlt:
+      "Mode selection interaction or split layout visualization placeholder.",
+  },
+  {
+    title: "Premium Build Quality",
+    description:
+      "Crafted with durable materials and a refined portable design.",
+    readout: "Alloy",
+    label: "Refined body",
+    detail: "Portable",
+    mediaPath: "/media/features/build-quality.jpg",
+    mediaAlt: "Premium close-up angles and material details placeholder.",
+  },
+  {
+    title: "Warranty & Support",
+    description:
+      "Reliable support and warranty coverage for confidence in every purchase.",
+    readout: "Care",
+    label: "Support",
+    detail: "Warranty",
+    mediaPath: "/media/features/warranty-support.jpg",
+    mediaAlt: "Minimal trust badge or support illustration placeholder.",
+  },
+];
+---
+
+<section
+  id="features"
+  aria-labelledby="features-heading"
+  class="relative isolate overflow-hidden bg-surface px-6 py-24 text-text sm:py-28 lg:px-10"
+>
+  <GradientBackground />
+
+  <div class="mx-auto w-full max-w-6xl">
+    <div class="max-w-3xl">
+      <p
+        class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary"
+      >
+        Características
+      </p>
+      <h2
+        id="features-heading"
+        class="text-4xl font-bold tracking-normal text-text text-balance sm:text-5xl lg:text-6xl"
+      >
+        Diseñado para una experiencia premium
+      </h2>
+      <p class="mt-5 max-w-2xl text-base leading-7 text-muted sm:text-lg">
+        El PGLOW combina tecnología avanzada, materiales de alta calidad y un
+        diseño intuitivo. Desde el control de temperatura hasta la batería de
+        larga duración.
+      </p>
+    </div>
+
+    <ul
+      class="mt-8 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/70"
+      aria-label="Product specifications"
+    >
+      {
+        specs.map((spec) => (
+          <li class="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2">
+            {spec}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-16 space-y-14 sm:mt-20 lg:space-y-24">
+      {
+        features.map((feature, index) => (
+          <article
+            class="feature-block grid gap-8 border-t border-white/10 pt-10 lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-16"
+            aria-labelledby={`feature-${index}`}
+          >
+            <figure
+              class:list={[
+                "feature-media relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 bg-surface-elevated/[0.62] shadow-[0_24px_90px_rgba(0,0,0,0.35),0_0_42px_rgba(111,209,215,0.10)] transition duration-500 ease-out",
+                index % 2 === 1 && "lg:order-2",
+              ]}
+              data-media-placeholder={feature.mediaPath}
+            >
+              <div
+                aria-hidden="true"
+                class="absolute inset-0 bg-[radial-gradient(circle_at_28%_24%,rgba(111,209,215,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.02))]"
+              />
+              <div
+                aria-hidden="true"
+                class="absolute -right-16 -top-20 h-44 w-44 rounded-full border border-primary/20 bg-primary/10 blur-3xl"
+              />
+
+              <div class="relative flex h-full flex-col justify-between p-5 sm:p-7">
+                <div class="flex items-center justify-between gap-4">
+                  <span class="rounded-full border border-white/10 bg-white/[0.07] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
+                    {feature.label}
+                  </span>
+                  <span class="text-sm font-semibold text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-center py-4">
+                  <div class="feature-device relative flex h-44 w-28 flex-col rounded-[2rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.16),rgba(255,255,255,0.035))] p-3 shadow-2xl shadow-black/45 transition duration-500 ease-out sm:h-52 sm:w-32">
+                    <div class="flex flex-1 flex-col justify-between rounded-[1.35rem] border border-white/10 bg-black/55 p-3">
+                      <div class="flex items-center justify-between">
+                        <span class="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span class="h-1.5 w-6 rounded-full bg-white/20" />
+                      </div>
+                      <div>
+                        <p class="text-xs font-medium uppercase tracking-[0.18em] text-white/45">
+                          PGLOW
+                        </p>
+                        <p class="mt-2 text-2xl font-bold tracking-normal text-primary sm:text-3xl">
+                          {feature.readout}
+                        </p>
+                      </div>
+                      <div class="space-y-1.5">
+                        <span class="block h-1.5 rounded-full bg-primary/75" />
+                        <span class="block h-1.5 w-2/3 rounded-full bg-white/18" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold text-white/68">
+                  <span class="rounded-full border border-white/10 bg-black/25 px-3 py-2">
+                    PGLOW
+                  </span>
+                  <span class="rounded-full border border-white/10 bg-black/25 px-3 py-2">
+                    {feature.detail}
+                  </span>
+                  <span class="rounded-full border border-white/10 bg-black/25 px-3 py-2">
+                    Ready
+                  </span>
+                </div>
+              </div>
+
+              <figcaption class="sr-only">{feature.mediaAlt}</figcaption>
+            </figure>
+
+            <div class:list={["max-w-xl", index % 2 === 1 && "lg:order-1"]}>
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                {feature.detail}
+              </p>
+              <h3
+                id={`feature-${index}`}
+                class="mt-4 text-3xl font-bold tracking-normal text-text text-balance sm:text-4xl"
+              >
+                {feature.title}
+              </h3>
+              <p class="mt-4 text-base leading-7 text-muted sm:text-lg">
+                {feature.description}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <style>
+    .feature-block:hover .feature-media {
+      border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
+      transform: translateY(-4px);
+    }
+
+    .feature-block:hover .feature-device {
+      transform: translateY(-6px) rotate(-2deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .feature-media,
+      .feature-device {
+        transform: none !important;
+        transition: none;
+      }
+    }
+  </style>
+</section>
