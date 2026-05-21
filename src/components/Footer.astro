@@ -81,7 +81,7 @@ const buyHref = "https://pglow.papedir.com";
 
     const updateFooter = () => {
       const currentScrollY = window.scrollY;
-      const isAtTop = currentScrollY <= 8;
+      const isAtTop = currentScrollY <= 128;
       const isScrollingDown = currentScrollY > lastScrollY;
       footer.dataset.hidden = String(!isAtTop && isScrollingDown);
 

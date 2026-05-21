@@ -117,20 +117,8 @@ const features = [
       </p>
     </div>
 
-    <ul
-      class="mt-8 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/70"
-      aria-label="Product specifications"
-    >
-      {
-        specs.map((spec) => (
-          <li class="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2">
-            {spec}
-          </li>
-        ))
-      }
-    </ul>
-
-    <div class="mt-16 space-y-14 sm:mt-20 lg:space-y-24">
+    <div class="mt-8 space-y-14 sm:mt-20 lg:space-y-24">
+      <!-- <div class=""> -->
       {
         features.map((feature, index) => (
           <article
@@ -220,24 +208,37 @@ const features = [
         ))
       }
     </div>
-  </div>
 
-  <style>
-    .feature-block:hover .feature-media {
-      border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
-      transform: translateY(-4px);
-    }
-
-    .feature-block:hover .feature-device {
-      transform: translateY(-6px) rotate(-2deg);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .feature-media,
-      .feature-device {
-        transform: none !important;
-        transition: none;
+    <ul
+      class="mt-8 flex flex-wrap gap-2 text-xs font-semibold tracking-[0.14em] text-white/70"
+      aria-label="Product specifications"
+    >
+      {
+        specs.map((spec) => (
+          <li class="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2">
+            {spec}
+          </li>
+        ))
       }
-    }
-  </style>
+    </ul>
+
+    <style>
+      .feature-block:hover .feature-media {
+        border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
+        transform: translateY(-4px);
+      }
+
+      .feature-block:hover .feature-device {
+        transform: translateY(-6px) rotate(-2deg);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .feature-media,
+        .feature-device {
+          transform: none !important;
+          transition: none;
+        }
+      }
+    </style>
+  </div>
 </section>
