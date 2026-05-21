@@ -117,12 +117,14 @@ const features = [
       </p>
     </div>
 
-    <div class="mt-8 space-y-14 sm:mt-20 lg:space-y-24">
+    <div
+      class="features-carousel mt-8 -mx-2 flex snap-x snap-mandatory gap-6 overflow-x-auto px-2 pb-4 scroll-smooth sm:mt-20 lg:gap-8 [scrollbar-width:none] [-ms-overflow-style:none]"
+    >
       <!-- <div class=""> -->
       {
         features.map((feature, index) => (
           <article
-            class="feature-block grid gap-8 border-t border-white/10 pt-10 lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-16"
+            class="feature-block grid min-w-[92%] snap-center gap-8 rounded-[2rem] border border-white/10 bg-surface-elevated/30 p-6 sm:min-w-[82%] sm:p-8 lg:min-w-full lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-16"
             aria-labelledby={`feature-${index}`}
           >
             <figure
@@ -223,6 +225,10 @@ const features = [
     </ul>
 
     <style>
+      .features-carousel::-webkit-scrollbar {
+        display: none;
+      }
+
       .feature-block:hover .feature-media {
         border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
         transform: translateY(-4px);

@@ -161,11 +161,29 @@ const navLinks = [
     const updateNavbar = () => {
       const currentScrollY = window.scrollY;
       const isAtTop = currentScrollY <= 8;
-      const isScrollingDown = currentScrollY > lastScrollY;
+      // const isScrollingDown = currentScrollY > lastScrollY;
 
-      navbar.dataset.hidden = String(
-        !isAtTop && isScrollingDown && !isMenuOpen,
-      );
+      // Only reveal the navbar when the user scrolls up by more than
+      // this threshold in pixels. Small upward jitters won't reveal it.
+      const UPWARD_SHOW_THRESHOLD = 30; // px
+      const upwardDelta = lastScrollY - currentScrollY; // positive when scrolling up
+      const isSignificantUp = upwardDelta > UPWARD_SHOW_THRESHOLD;
+
+      const downwardDelta = currentScrollY - lastScrollY; // positive when scrolling down
+      const isSignificantDown = downwardDelta > 10;
+
+      // Rules:
+      // - Always visible at the very top or when the mobile menu is open
+      // - Hide while scrolling down
+      // - Show only when a significant upward scroll is detected
+      if (isAtTop || isMenuOpen) {
+        navbar.dataset.hidden = "false";
+      } else if (isSignificantDown) {
+        navbar.dataset.hidden = "true";
+      } else if (isSignificantUp) {
+        navbar.dataset.hidden = "false";
+      }
+
       lastScrollY = currentScrollY;
       ticking = false;
     };

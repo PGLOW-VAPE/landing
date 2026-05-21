@@ -81,18 +81,23 @@ const buyHref = "https://pglow.papedir.com";
 
     const updateFooter = () => {
       const currentScrollY = window.scrollY;
-      const isAtTop = currentScrollY <= 128;
-      const isScrollingDown = currentScrollY > lastScrollY;
-      footer.dataset.hidden = String(!isAtTop && isScrollingDown);
+      const isAtTop = currentScrollY <= 8;
+      // const isScrollingDown = currentScrollY > lastScrollY;
 
-      // const hasScrolledMeaningfully =
-      //   Math.abs(currentScrollY - lastScrollY) > 2;
+      const UPWARD_SHOW_THRESHOLD = 30; // px
+      const upwardDelta = lastScrollY - currentScrollY; // positive when scrolling up
+      const isSignificantUp = upwardDelta > UPWARD_SHOW_THRESHOLD;
 
-      // if (isAtTop) {
-      //   footer.dataset.hidden = "true";
-      // } else if (hasScrolledMeaningfully) {
-      //   footer.dataset.hidden = String(isScrollingDown);
-      // }
+      const downwardDelta = currentScrollY - lastScrollY; // positive when scrolling down
+      const isSignificantDown = downwardDelta > 10;
+
+      if (isAtTop) {
+        footer.dataset.hidden = "false";
+      } else if (isSignificantDown) {
+        footer.dataset.hidden = "true";
+      } else if (isSignificantUp) {
+        footer.dataset.hidden = "false";
+      }
 
       lastScrollY = currentScrollY;
       ticking = false;
