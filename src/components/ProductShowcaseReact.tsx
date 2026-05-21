@@ -50,15 +50,15 @@ const slides: ShowcaseSlide[] = [
     type: "image",
     src: "https://i.ibb.co/1t0rrpq4/D7-DC7-F9-D-55-EE-4-D4-C-B098-C54-DBA6-A736-B.png",
     title: "Carga con USB-C",
-    caption: "Ready for daily use.",
+    caption: "Confiable y conveniente.",
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
   },
 
   {
     type: "image",
-    src: "https://www.planetofthevapes.com/cdn/shop/files/battery_1_cabca34a-408f-45be-add5-1c797ab901f1_840x.jpg?v=1748449934",
-    title: "Replaceable battery",
-    caption: "Power that keeps moving.",
+    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
+    title: "Batería de 3000 mAh",
+    caption: "Intercambiable y de larga duración.",
     alt: "Replaceable battery placeholder for the PGLOW vaporizer.",
   },
   {
@@ -266,7 +266,7 @@ export default function ProductShowcaseReact() {
       aria-label="Product media carousel"
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="mt-10 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-secondary sm:mt-12"
+      className="mt-8 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-secondary sm:mt-12"
     >
       <div className="relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04] shadow-[0_26px_90px_rgba(0,0,0,0.46),0_0_48px_rgba(111,209,215,0.12)]">
         <div
@@ -334,8 +334,11 @@ export default function ProductShowcaseReact() {
         </div>
       </div>
 
+      <p className="sr-only" aria-live="polite">
+        Slide {activeIndex + 1} of {slides.length}: {activeSlide.title}
+      </p>
       <div
-        className="mt-5 flex items-center justify-center gap-2"
+        className="pt-6 flex items-center justify-center gap-2"
         aria-label="Choose product media slide"
       >
         {slides.map((slide, index) => {
@@ -357,10 +360,6 @@ export default function ProductShowcaseReact() {
           );
         })}
       </div>
-
-      <p className="sr-only" aria-live="polite">
-        Slide {activeIndex + 1} of {slides.length}: {activeSlide.title}
-      </p>
     </div>
     //   </div>
     // </section>

@@ -10,14 +10,14 @@ const buyHref = "https://pglow.papedir.com";
   aria-label="Acciones rápidas"
 >
   <div
-    class="mx-auto flex max-w-3xl items-center justify-between gap-3 rounded-none bg-secondary/[0.88] px-3 py-2.5 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4"
+    class="mx-auto flex max-w-3xl items-center justify-between gap-2 rounded-none bg-secondary/[0.88] px-3 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4"
   >
     <a
       href="#inicio"
       class="flex min-w-0 items-center gap-2 rounded-full pr-1 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       aria-label="Volver al inicio de PGLOW"
     >
-      <span
+      <!-- <span
         class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary"
       >
         <img
@@ -25,11 +25,15 @@ const buyHref = "https://pglow.papedir.com";
           alt="PGLOW logo"
           class="h-5 w-5 [filter:brightness(0)]"
         />
-      </span>
+      </span> -->
       <span
-        class="truncate text-sm font-semibold leading-none text-white sm:text-base"
+        aria-hidden="true"
+        class="h-6 w-6 bg-primary [mask:url('/favicon.svg')_center/contain_no-repeat] [-webkit-mask:url('/favicon.svg')_center/contain_no-repeat]"
+      ></span>
+      <span
+        class="text-sm font-semibold leading-5 text-white text-right sm:text-base"
       >
-        Pure flavor. Precise control.
+        Más Power, Menos Humo
       </span>
     </a>
 
