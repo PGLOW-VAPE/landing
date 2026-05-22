@@ -242,24 +242,6 @@ export default function ProductShowcaseReact() {
   const activeSlide = slides[activeIndex] ?? slides[0];
 
   return (
-    // <section
-    //   id="product"
-    //   aria-labelledby="product-showcase-heading"
-    //   className="relative isolate overflow-hidden bg-secondary px-6 py-8 text-white sm:py-28 lg:px-10"
-    // >
-    //   <div className="mx-auto w-full max-w-6xl">
-    //     <div className="max-w-3xl">
-    //       <h2
-    //         id="product-showcase-heading"
-    //         className="mt-0 text-4xl font-bold tracking-normal text-primary text-balance sm:text-5xl"
-    //       >
-    //         Meet the Vaporizer
-    //       </h2>
-    //       <p className="mt-5 max-w-2xl text-base leading-7 text-white/72 sm:text-lg">
-    //         Designed for smooth sessions, pure flavor, and precise control.
-    //       </p>
-    //     </div>
-
     <div
       role="region"
       aria-roledescription="carousel"
@@ -361,7 +343,5 @@ export default function ProductShowcaseReact() {
         })}
       </div>
     </div>
-    //   </div>
-    // </section>
   );
 }
