@@ -6,30 +6,31 @@ const specs = ["160-220°C", "3000mAh", "USB-C", "OLED"];
 
 const features = [
   {
-    title: "Calentamiento Controlado",
-    description:
-      "Ofrece una curva de calentamiento ideal para obtener el mejor sabor y vapor, con control de temperatura ajustable entre 160°C y 220°C.",
-    readout: "220°C",
-    label: "Precisión",
-    detail: "1°C steps",
-    mediaPath: "/media/features/temperature-control.jpg",
-    mediaAlt: "OLED screen or temperature adjustment close-up placeholder.",
-  },
-  {
     title: "Sabor Puro",
     description:
       "Vapor limpio y sabroso gracias a la cámara de calentamiento de cerámica y conductos de vidrio.",
-    readout: "Glass",
+    readout: "Pure",
     label: "Materiales óptimos",
     detail: "Cerámica + vidrio",
     mediaPath: "/media/features/pure-flavor.jpg",
     mediaAlt: "Macro product detail or vapor shot placeholder.",
   },
   {
+    title: "Calentamiento Controlado",
+    description:
+      "Ofrece una curva de calentamiento ideal para obtener el mejor sabor y vapor, con control de temperatura ajustable entre 160°C y 220°C.",
+    readout: "220°",
+    label: "Precisión",
+    detail: "1°C steps",
+    mediaPath: "/media/features/temperature-control.jpg",
+    mediaAlt: "OLED screen or temperature adjustment close-up placeholder.",
+  },
+
+  {
     title: "Batería de 3000mAh",
     description:
       "Disfruta de sesiones prolongadas con una potente batería de 3000mAh intercambiable que te acompaña todo el día.",
-    readout: "hola",
+    readout: "Power",
     label: "Batería potente",
     detail: "Larga duración",
     mediaPath: "/media/features/battery-life.jpg",
@@ -60,7 +61,7 @@ const features = [
     title: "Modos de Uso Versátiles",
     description:
       "Elige entre modo sesión para calentamiento continuo o modo por plones para calentar únicamente al mantener presionado el botón.",
-    readout: "Cargando plones",
+    readout: "Plon",
     label: "Modos de uso",
     detail: "Sesión o por plones",
     mediaPath: "/media/features/heating-modes.jpg",
@@ -124,7 +125,7 @@ const features = [
       {
         features.map((feature, index) => (
           <article
-            class="feature-block grid min-w-[92%] snap-center gap-8 rounded-[2rem] border border-white/10 bg-surface-elevated/30 p-6 sm:min-w-[82%] sm:p-8 lg:min-w-full lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-16"
+            class=" feature-block grid min-w-[92%] snap-center gap-8 rounded-[2rem] border border-white/10 bg-surface-elevated/30 p-6 sm:min-w-[82%] sm:p-8 lg:min-w-full lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-16"
             aria-labelledby={`feature-${index}`}
           >
             <figure
@@ -138,10 +139,10 @@ const features = [
                 aria-hidden="true"
                 class="absolute inset-0 bg-[radial-gradient(circle_at_28%_24%,rgba(111,209,215,0.22),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.02))]"
               />
-              <div
+              {/* <div
                 aria-hidden="true"
                 class="absolute -right-16 -top-20 h-44 w-44 rounded-full border border-primary/20 bg-primary/10 blur-3xl"
-              />
+              /> */}
 
               <div class="relative flex h-full flex-col justify-between p-5 sm:p-7">
                 <div class="flex items-center justify-between gap-4">
