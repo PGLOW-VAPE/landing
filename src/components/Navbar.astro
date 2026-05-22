@@ -165,12 +165,12 @@ const navLinks = [
 
       // Only reveal the navbar when the user scrolls up by more than
       // this threshold in pixels. Small upward jitters won't reveal it.
-      const UPWARD_SHOW_THRESHOLD = 30; // px
+      const UPWARD_SHOW_THRESHOLD = 40; // px
       const upwardDelta = lastScrollY - currentScrollY; // positive when scrolling up
       const isSignificantUp = upwardDelta > UPWARD_SHOW_THRESHOLD;
 
       const downwardDelta = currentScrollY - lastScrollY; // positive when scrolling down
-      const isSignificantDown = downwardDelta > 10;
+      const isSignificantDown = downwardDelta > 2;
 
       // Rules:
       // - Always visible at the very top or when the mobile menu is open

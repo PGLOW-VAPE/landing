@@ -84,12 +84,12 @@ const buyHref = "https://pglow.papedir.com";
       const isAtTop = currentScrollY <= 8;
       // const isScrollingDown = currentScrollY > lastScrollY;
 
-      const UPWARD_SHOW_THRESHOLD = 30; // px
+      const UPWARD_SHOW_THRESHOLD = 40; // px
       const upwardDelta = lastScrollY - currentScrollY; // positive when scrolling up
       const isSignificantUp = upwardDelta > UPWARD_SHOW_THRESHOLD;
 
       const downwardDelta = currentScrollY - lastScrollY; // positive when scrolling down
-      const isSignificantDown = downwardDelta > 10;
+      const isSignificantDown = downwardDelta > 2;
 
       if (isAtTop) {
         footer.dataset.hidden = "false";
