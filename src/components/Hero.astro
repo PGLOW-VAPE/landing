@@ -9,7 +9,7 @@ const vapeImage =
 <section
   id="inicio"
   aria-labelledby="hero-heading"
-  class="relative isolate flex h-screen max-h-screen flex-col overflow-hidden bg-surface px-0 pb-[clamp(12rem,13dvh,7.25rem)] pt-[clamp(6rem,13dvh,7.25rem)] text-text sm:px-8 lg:h-screen lg:max-h-screen lg:justify-center lg:px-10 lg:pb-24 lg:pt-28"
+  class="pt-24 pb-32 relative isolate flex h-screen max-h-screen flex-col overflow-hidden bg-surface px-0 text-text sm:px-8 lg:h-screen lg:max-h-screen lg:justify-center lg:px-10 lg:pb-48 lg:pt-28"
 >
   <!-- <div
     class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat scale-[1.03] lg:bg-[center_right_18%]"
@@ -20,58 +20,55 @@ const vapeImage =
   <GradientBackground variant="hero" />
 
   <div
-    class="mx-auto flex min-h-0 w-full max-w-6xl flex-1 items-stretch justify-center lg:flex-none lg:items-center lg:justify-start"
+    class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:ml-8 lg:flex-none lg:items-start lg:justify-center lg:gap-8 lg:text-left xl:ml-16"
   >
+    <div class="w-full shrink-0">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm md:pt-32"
+      >
+        Vaporizador herbal · Colombia
+      </p>
+
+      <h1
+        id="hero-heading"
+        class="mt-[clamp(0.75rem,2dvh,1.25rem)] max-w-4xl text-[clamp(2.25rem,7.2dvw,3.75rem)] font-bold leading-[1.2] tracking-normal text-text text-balance sm:text-5xl md:text-6xl"
+      >
+        Una Experiencia Herbal Más Limpia
+        <!-- Más sabor, Menos Humo Con Vaporizador Herbal -->
+      </h1>
+    </div>
+
     <div
-      class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:ml-8 lg:flex-none lg:items-start lg:justify-center lg:gap-8 lg:text-left xl:ml-16"
+      class="relative sm:max-h-70 min-h-52 w-full flex-1 overflow-hidden px-6 lg:h-[clamp(18rem,42vh,30rem)] lg:flex-none"
     >
-      <div class="w-full shrink-0">
-        <p
-          class="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm md:pt-32"
-        >
-          Vaporizador herbal · Colombia
-        </p>
-
-        <h1
-          id="hero-heading"
-          class="mt-[clamp(0.75rem,2dvh,1.25rem)] max-w-4xl text-[clamp(2.25rem,7.2dvw,3.75rem)] font-bold leading-[1.2] tracking-normal text-text text-balance sm:text-5xl md:text-6xl"
-        >
-          Una Experiencia Herbal Más Limpia
-          <!-- Más sabor, Menos Humo Con Vaporizador Herbal -->
-        </h1>
-      </div>
-
-      <div
-        class="relative min-h-0 w-full flex-1 overflow-hidden px-6 lg:h-[clamp(18rem,42vh,30rem)] lg:flex-none"
+      <img
+        src={vapeImage}
+        alt="Imagen del vaporizador PGLOW"
+        class="h-full w-full rounded-2xl border border-white/10 object-cover object-center shadow-2xl shadow-black/35"
+      />
+      <h2
+        class="absolute bottom-4 left-10 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary backdrop-blur"
       >
-        <img
-          src={vapeImage}
-          alt="Imagen del vaporizador PGLOW"
-          class="h-full w-full rounded-2xl border border-white/10 object-cover object-center shadow-2xl shadow-black/35"
-        />
-        <h2
-          class="absolute bottom-4 left-10 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary backdrop-blur"
-        >
-          $229.900 COP
-        </h2>
-        <h2
-          class="absolute top-4 left-10 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary backdrop-blur"
-        >
-          Envíos a todo Colombia
-        </h2>
-      </div>
-
-      <div
-        class="px-5 flex w-full shrink-0 flex-col items-center gap-[clamp(0.75rem,2dvh,1.35rem)] lg:items-start"
+        $249.900 COP
+      </h2>
+      <h2
+        class="absolute top-4 left-10 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary backdrop-blur"
       >
-        <p
-          class="max-w-2xl text-[clamp(0.98rem,2.4dvh,1rem)] leading-7 text-white/82 md:leading-8 mb-1"
-        >
-          Sácale el máximo poder a tus hierbas con calentamiento controlado,
-          batería de larga duración y diseño compacto.
-        </p>
+        Envíos a todo Colombia
+      </h2>
+    </div>
 
-        <!-- <ul
+    <div
+      class="px-5 flex w-full shrink-0 flex-col items-center gap-[clamp(0.75rem,2dvh,1.35rem)] lg:items-start"
+    >
+      <p
+        class="max-w-2xl text-[clamp(0.98rem,2.4dvh,1rem)] leading-7 text-white/82 md:leading-8 mb-1"
+      >
+        Sácale el máximo poder a tus hierbas con calentamiento controlado,
+        batería de larga duración y diseño compacto.
+      </p>
+
+      <!-- <ul
           class="flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium leading-none text-white/90 sm:w-auto sm:gap-x-6 sm:text-sm lg:justify-start pt-2"
         >
           <li>160–220°C</li>
@@ -79,25 +76,23 @@ const vapeImage =
           <li>USB-C</li>
           <li>OLED Display</li>
         </ul> -->
+      <div
+        class="md:hidden px-6 grid w-full grid-cols-2 gap-3 sm:w-auto sm:flex sm:items-center sm:justify-center lg:justify-start"
+      >
+        <a
+          href="#product-showcase-heading"
+          class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/16 bg-white/8 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:border-primary/60 hover:bg-primary/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-7 sm:py-3"
+        >
+          Conocer más
+        </a>
+        <a
+          href="https://pglow.papedir.com"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-secondary shadow-xl shadow-primary/20 transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-7 sm:py-3"
+        >
+          Comprar ahora
+        </a>
       </div>
     </div>
-  </div>
-
-  <div
-    class="absolute bottom-30 px-6 grid w-full grid-cols-2 gap-3 sm:w-auto sm:flex sm:items-center sm:justify-center lg:justify-start"
-  >
-    <a
-      href="#product-showcase-heading"
-      class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/16 bg-white/8 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:border-primary/60 hover:bg-primary/10 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-7 sm:py-3"
-    >
-      Conocer más
-    </a>
-    <a
-      href="https://pglow.papedir.com"
-      class="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-secondary shadow-xl shadow-primary/20 transition hover:bg-white hover:text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-7 sm:py-3"
-    >
-      Comprar ahora
-    </a>
   </div>
 
   <style>

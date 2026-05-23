@@ -6,11 +6,11 @@ const buyHref = "https://pglow.papedir.com";
 <aside
   data-footer
   data-hidden="false"
-  class="fixed inset-x-0 bottom-0 z-50 transition duration-300 ease-out data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
+  class="fixed inset-x-0 bottom-0 lg:bottom-4 z-50 transition duration-300 ease-out data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
   aria-label="Acciones rápidas"
 >
   <div
-    class="mx-auto flex max-w-3xl items-center justify-between gap-2 rounded-none bg-secondary/[0.88] px-3 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4"
+    class="mx-auto flex max-w-3xl items-center justify-between gap-2 rounded-none bg-secondary/[0.88] px-3 py-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4 lg:rounded-2xl"
   >
     <a
       href="#inicio"
@@ -107,7 +107,7 @@ const buyHref = "https://pglow.papedir.com";
       "scroll",
       () => {
         if (!ticking) {
-          window.requestAnimationFrame(updateFooter);
+          // window.requestAnimationFrame(updateFooter);
           ticking = true;
         }
       },
