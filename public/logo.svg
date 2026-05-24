@@ -1,0 +1,49 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PGLOW logo">
+  <rect width="512" height="512" fill="#000000"/>
+  <!-- arrow edges -->
+  <polygon points="92,163 109,180 75,180" fill="#6fd1d7"/>
+  <polygon points="420,163 403,180 437,180" fill="#6fd1d7"/>
+
+  <g fill="none" stroke="#6fd1d7" stroke-width="24" stroke-linecap="butt" stroke-linejoin="miter">
+    <!-- Arrow head -->
+    <!-- <path d="M64 224 L256 32 L448 224"/> -->
+    <path d="M100 172 L256 16 L412 172"/>
+
+    
+
+    <!-- Center PCB track -->
+    <!-- <path d="M256 456 V200"/> -->
+    <path d="M256 496 V128"/>
+
+    <!-- Left PCB track -->
+    <path d="M96 480 V400 L176 320 V208"/>
+    <!-- <path d="M96 480 V360 L176 280 V208"/> -->
+    <!-- <path d="M96 480 L176 400 V208"/> -->
+
+
+    <!-- Right PCB track -->
+    <path d="M416 480 V400 L336 320 V208"/>
+    <!-- <path d="M416 480 V360 L336 280 V208"/> -->
+    <!-- <path d="M416 480 L336 400 V208"/> -->
+  </g>
+
+  <g fill="#6fd1d7">
+    <!-- Top nodes -->
+    <circle cx="256" cy="128" r="24"/>
+    <circle cx="176" cy="208" r="24"/>
+    <circle cx="336" cy="208" r="24"/>
+
+    <!-- Bottom ring nodes -->
+    <circle cx="96" cy="480" r="24"/>
+    <circle cx="256" cy="480" r="24"/>
+    <circle cx="416" cy="480" r="24"/>
+
+    
+  </g>
+
+  <g fill="#000">
+    <circle cx="96" cy="480" r="12"/>
+    <circle cx="256" cy="480" r="12"/>
+    <circle cx="416" cy="480" r="12"/>
+  </g>
+</svg>
