@@ -48,7 +48,8 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
-    src: "https://i.ibb.co/R4Q0Y7J6/DD74-E5-C2-E787-4-C9-B-84-D3-567-BFC96-B73-F.png",
+    // src: "https://i.ibb.co/R4Q0Y7J6/DD74-E5-C2-E787-4-C9-B-84-D3-567-BFC96-B73-F.png",
+    src: "https://i.ibb.co/20W7kLkw/E022-B42-F-CE79-4-CC8-B22-A-8277-B666-F969.png",
     title: "Carga con USB-C",
     caption: "Confiable y conveniente.",
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
@@ -301,7 +302,7 @@ export default function ProductShowcaseReact() {
                       src={slide.src}
                       alt={slide.alt}
                       loading={index === 1 ? "eager" : "lazy"}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover lg:object-contain"
                     />
                   )}
                   <div

@@ -21,11 +21,11 @@ const vapeImage =
   <GradientBackground variant="hero" />
 
   <div
-    class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:ml-8 lg:items-start lg:justify-center lg:gap-8 lg:text-left xl:ml-16 lg:flex-row"
+    class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:px-8 lg:gap-8 lg:text-left xl:ml-16 lg:flex-row"
   >
-    <div class="w-full shrink-0">
+    <div class="">
       <p
-        class="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm md:pt-32"
+        class="text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:text-sm lg:pt-16"
       >
         Vaporizador herbal · Colombia
       </p>
@@ -37,6 +37,12 @@ const vapeImage =
         Una Experiencia Herbal Más Limpia
         <!-- Más sabor, Menos Humo Con Vaporizador Herbal -->
       </h1>
+      <p
+        class="hidden lg:flex pb-2 md:hidden max-w-2xl text-[clamp(0.98rem,2.4dvh,1rem)] leading-7 text-white/82 md:leading-8 mb-1"
+      >
+        Sácale el máximo poder a tus hierbas con calentamiento controlado,
+        batería de larga duración y diseño compacto.
+      </p>
     </div>
 
     <div class="relative aspect-7/4 w-full overflow-hidden px-6 lg:flex-none">
@@ -57,17 +63,14 @@ const vapeImage =
       </h2>
     </div>
 
-    <div
-      class="pb-2 px-5 flex w-full shrink-0 flex-col items-center gap-[clamp(0.75rem,2dvh,1.35rem)] lg:items-start"
+    <p
+      class="px-4 pb-2 md:hidden max-w-2xl text-[clamp(0.98rem,2.4dvh,1rem)] leading-7 text-white/82 md:leading-8 mb-1"
     >
-      <p
-        class="max-w-2xl text-[clamp(0.98rem,2.4dvh,1rem)] leading-7 text-white/82 md:leading-8 mb-1"
-      >
-        Sácale el máximo poder a tus hierbas con calentamiento controlado,
-        batería de larga duración y diseño compacto.
-      </p>
+      Sácale el máximo poder a tus hierbas con calentamiento controlado, batería
+      de larga duración y diseño compacto.
+    </p>
 
-      <!-- <ul
+    <!-- <ul
           class="flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium leading-none text-white/90 sm:w-auto sm:gap-x-6 sm:text-sm lg:justify-start pt-2"
         >
           <li>160–220°C</li>
@@ -75,7 +78,7 @@ const vapeImage =
           <li>USB-C</li>
           <li>OLED Display</li>
         </ul> -->
-    </div>
+
     <div
       class="md:hidden px-6 grid w-full grid-cols-2 gap-3 sm:w-auto sm:flex sm:items-center sm:justify-center lg:justify-start"
     >
@@ -96,7 +99,7 @@ const vapeImage =
 
   <style>
     .hero-content {
-      animation: hero-content-in 700ms ease-out both;
+      animation: hero-content-in 1000ms ease-in-out;
     }
 
     @keyframes hero-content-in {
