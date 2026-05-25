@@ -2,14 +2,15 @@
 import GradientBackground from "./GradientBackground.astro";
 
 const vapeImage =
-  "https://i.ibb.co/fGp5hfbs/31-A6-FEA0-6-AA2-4-D17-9831-D3-A20-D731077.png";
+  // "https://i.ibb.co/fGp5hfbs/31-A6-FEA0-6-AA2-4-D17-9831-D3-A20-D731077.png";
+  "https://i.ibb.co/RGD8zhRK/082-B872-F-BA8-E-41-F0-8-C43-39-C5-F5-CBB1-F2.png";
 // const heroImage = "https://i.ibb.co/1sZzL7Z/IMG-8066.jpg";
 ---
 
 <section
   id="inicio"
   aria-labelledby="hero-heading"
-  class="pt-24 pb-24 relative isolate flex h-fit flex-col overflow-hidden bg-surface px-0 text-text sm:px-8 lg:h-screen lg:max-h-screen lg:justify-center lg:px-10 lg:pb-48 lg:pt-28"
+  class="pt-26 pb-24 relative isolate flex h-fit flex-col overflow-hidden bg-surface px-0 text-text sm:px-8 lg:h-screen lg:max-h-screen lg:justify-center lg:px-10 lg:pb-48 lg:pt-28"
 >
   <!-- <div
     class="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat scale-[1.03] lg:bg-[center_right_18%]"
@@ -20,7 +21,7 @@ const vapeImage =
   <GradientBackground variant="hero" />
 
   <div
-    class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:ml-8 lg:flex-none lg:items-start lg:justify-center lg:gap-8 lg:text-left xl:ml-16"
+    class="hero-content flex min-h-0 w-full max-w-3xl flex-1 flex-col items-center justify-between gap-[clamp(1rem,2.2dvh,1.5rem)] text-center lg:ml-8 lg:items-start lg:justify-center lg:gap-8 lg:text-left xl:ml-16 lg:flex-row"
   >
     <div class="w-full shrink-0">
       <p
@@ -38,9 +39,7 @@ const vapeImage =
       </h1>
     </div>
 
-    <div
-      class="relative h-60 w-full overflow-hidden px-6 lg:h-[clamp(18rem,42vh,30rem)] lg:flex-none"
-    >
+    <div class="relative aspect-7/4 w-full overflow-hidden px-6 lg:flex-none">
       <img
         src={vapeImage}
         alt="Imagen del vaporizador PGLOW"

@@ -68,6 +68,14 @@ const slides: ShowcaseSlide[] = [
     caption: "Mejor sabor y fácil de limpiar.",
     alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
   },
+  {
+    type: "image",
+    src: "https://i.ibb.co/XkVQB6c0/EF9-D06-CE-2028-4249-8-D50-1-F854-BF9-AB88.png",
+    title: "Diseñado en Colombia",
+    caption:
+      "Ensamblado localmente con soporte técnico y respaldo garantizado.",
+    alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
+  },
 ];
 
 type DragState = {
