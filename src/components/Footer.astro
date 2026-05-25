@@ -6,15 +6,15 @@ const buyHref = "https://pglow.papedir.com";
 <aside
   data-footer
   data-hidden="false"
-  class="fixed inset-x-0 bottom-0 lg:bottom-4 z-50 data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
+  class="fixed px-4 rounded-full inset-x-0 pb-4 bottom-0 lg:bottom-4 z-50 data-[hidden=true]:translate-y-[calc(100%+1.5rem)] data-[hidden=true]:opacity-0 motion-reduce:transition-none sm:px-6 lg:px-8"
   aria-label="Acciones rápidas"
 >
   <div
-    class="border-t border-primary/20 footer-div mx-auto flex max-w-3xl items-center justify-between gap-2 rounded-none bg-secondary/[0.88] pl-3 pr-4 pt-3 pb-3 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4 lg:rounded-2xl"
+    class="rounded-full border-t border-b border-primary/20 footer-div mx-auto flex max-w-3xl items-center justify-between gap-2 bg-secondary/[0.88] pl-6 pr-6 pt-4 pb-4 text-text shadow-2xl shadow-black/30 backdrop-blur-xl supports-[backdrop-filter]:bg-secondary/[0.72] sm:px-4 lg:rounded-2xl"
   >
     <a
       href="#inicio"
-      class="flex min-w-0 items-center gap-2 rounded-full pr-1 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+      class="flex min-w-0 items-center gap-3 rounded-full pr-1 transition hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       aria-label="Volver al inicio de PGLOW"
     >
       <!-- <span
@@ -103,12 +103,13 @@ const buyHref = "https://pglow.papedir.com";
 
       if (isAtTop) {
         footer.dataset.hidden = "false";
-        footerDiv.classList.replace("pb-8", "pb-3");
+        // footerDiv.classList.replace("border-primary/20", "border-primary");
       } else if (isSignificantDown) {
-        footerDiv.classList.replace("pb-3", "pb-8");
+        // footerDiv.classList.replace("border-primary", "border-primary/20");
+        // footerDiv.classList.replace("pb-3", "pb-3");
       } else if (isSignificantUp) {
         // footer.dataset.hidden = "false";
-        footerDiv.classList.replace("pb-8", "pb-3");
+        // footerDiv.classList.replace("pb-8", "pb-3");
       }
 
       lastScrollY = currentScrollY;

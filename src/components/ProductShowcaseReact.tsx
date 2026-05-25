@@ -32,7 +32,7 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
-    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
+    src: "https://i.ibb.co/x8JkgM6q/043-E98-FE-8867-41-F4-B5-DB-1551-F199-AF11.png",
     title: "Diseño compacto",
     caption: "Perfecto para sesiones discretas.",
     alt: "Close-up placeholder of the PGLOW vaporizer.",
@@ -40,7 +40,7 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
-    src: "https://i.ibb.co/4nVDsWQp/F4-A5-ED43-866-E-47-CD-96-CE-014382-CE4203.png",
+    src: "https://i.ibb.co/Kc2233N7/E52-C7-D7-B-1-BE3-4457-8-ED1-7-F452868233-F.png",
     title: "Pantalla OLED",
     caption: "Vaporiza con precisión y estilo.",
     alt: "OLED display placeholder on the PGLOW vaporizer.",
@@ -48,7 +48,7 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
-    src: "https://i.ibb.co/1t0rrpq4/D7-DC7-F9-D-55-EE-4-D4-C-B098-C54-DBA6-A736-B.png",
+    src: "https://i.ibb.co/R4Q0Y7J6/DD74-E5-C2-E787-4-C9-B-84-D3-567-BFC96-B73-F.png",
     title: "Carga con USB-C",
     caption: "Confiable y conveniente.",
     alt: "USB-C charging placeholder for the PGLOW vaporizer.",
@@ -56,14 +56,14 @@ const slides: ShowcaseSlide[] = [
 
   {
     type: "image",
-    src: "https://i.ibb.co/XxkJJq3Q/BBB4809-D-4882-4167-A9-FE-49-A8-D1-AADE53.png",
+    src: "https://i.ibb.co/gZg5GMGV/923-D8629-4554-45-F2-B1-E2-401-E50-C6-AD6-E.png",
     title: "Batería de 3000 mAh",
     caption: "Intercambiable y de larga duración.",
     alt: "Replaceable battery placeholder for the PGLOW vaporizer.",
   },
   {
     type: "image",
-    src: "https://i.ibb.co/PGmxcywX/56-AB0728-68-BC-4033-8-CA7-C59197-AD1718.png",
+    src: "https://i.ibb.co/0V8B352C/1-CB4-F92-F-3-F73-448-E-BBC5-5770-E3462-E75.png",
     title: "Tanque de cerámica",
     caption: "Mejor sabor y fácil de limpiar.",
     alt: "Imagen de uso del vaporizador PGLOW mostrando la carga de hierba, selección de temperatura y vapeo.",
